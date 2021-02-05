@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+/* bootstrap card header 方案 */
+/*
+使用样例
+<div class="card">
+  <div class="card-header position-relative app-card-header">
+    <div class="app-card-header-align-center">
+    ...
+    </div>
+  </div>
+</div>
+*/
+/* card 表头居中 */
+.app-card-header {
+  position: relative;
+  border: 0px;
+  background-color: inherit;
+}
+
+/* card 表头居中 */
+.app-card-header-align-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-51%);
+}
+
+/* card 表头下的i标签margin */
+.app-card-header-align-center > i{
+  margin-right: 0.5rem;
+}
+
+/* btn 之间的间距*/
+.app-btn-margin {
+  margin: 0 0.2rem;
+}
+
+/* btn 固定宽度*/
+.app-btn-width {
+  width: 120px;
+}
+
+/* 统一项目 btn 标准*/
+.app-btn-std {
+  margin: 0 0.2rem;
+  width: 120px;
+}
+/* bootstrap card header 方案 */
+
+/* bootstrap card body 方案 */
+/*
+使用样例
+<div class="card">
+  <div class="card-body">
+    <h5 class="pull-left app-card-body-title"><i class="fa fa-navicon"></i><span>数据列表</span></h5>
+    <div class="pull-right">
+    <button type="button" class="btn btn-light app-btn-std">添&nbsp;&nbsp;&nbsp;加</button>
+    </div>
+  </div>
+</div>
+*/
+.app-card-body-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-52%);
+}
+.app-card-body-title > i{
+  margin-right: 0.5rem;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-inline-block > i {
+  margin-right: 0.5rem;
+}
+/* bootstrap card body 方案 */

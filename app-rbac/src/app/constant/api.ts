@@ -1,4 +1,5 @@
 export class Api {
-  static HOST: string = '/api';
-  static MENUS: string = Api.HOST + '/menu';
+  static HOST = '/api';
+  static MENU_TREE = Api.HOST + '/menu/tree';
+  static ROLE_QUERY = Api.HOST + '/role/query';
 }

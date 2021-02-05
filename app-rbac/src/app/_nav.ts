@@ -11,13 +11,13 @@ export const navItems: INavData[] = [
     }
   },
   {
-    name: '权限管理',
-    url: '/base',
+    name: '基础资料',
+    url: '',
     icon: 'icon-puzzle',
     children: [
       {
         name: '角色',
-        url: '/base/cards',
+        url: '/base/roles',
         icon: 'icon-puzzle'
       },
       {

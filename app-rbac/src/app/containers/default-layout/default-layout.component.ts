@@ -6,6 +6,9 @@ import {Location} from "@angular/common";
 import {MenuService} from "../../service/menu.service";
 import {INavData} from "@coreui/angular";
 import {tap, timeout} from "rxjs/operators";
+import {Constant} from "../../constant/constant";
+import {INavBadge} from "@coreui/angular/lib/sidebar/app-sidebar-nav";
+import {Menu} from "../../model/menu";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +16,7 @@ import {tap, timeout} from "rxjs/operators";
 })
 export class DefaultLayoutComponent implements OnInit{
   public sidebarMinimized = false;
-  public navItems: INavData[] = [];
+  public navItems: INavData[] = navItems;
 
   constructor(
     private menuService: MenuService
@@ -21,28 +24,28 @@ export class DefaultLayoutComponent implements OnInit{
 
   ngOnInit() {
 
-    this.menuService.getMenus().subscribe(menus => {
-      let navItems = [];
-
-      // navItems.push({
-      //   name: 'Dashboard',
-      //   url: '/dashboard',
-      //   icon: 'icon-speedometer',
-      //   badge: {
-      //     variant: 'info',
-      //     text: 'NEW'
-      //   }
-      // });
+    this.menuService.listMenus().subscribe(menus => {
+      let navItems: INavData[] = [];
 
       menus.forEach(menu => {
+        let b: INavBadge;
+        if (menu.code == Constant.MENU_DASHBOARD_CODE) {
+          b =  {
+            variant: 'info',
+            text: 'NEW'
+          };
+        }
+
         navItems.push({
           name: menu.name,
           url: menu.url,
           icon: menu.icon,
+          badge: b,
+          children: menu.children
         })
       });
 
-      this.navItems = navItems;
+      // this.navItems = navItems;
     });
   }
 
